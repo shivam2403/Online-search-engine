@@ -1,4 +1,6 @@
 import { createContext, useContext, useState } from "react";
+import { RapidAPI_Key } from "../utils";
+import { RapidAPI_key2 } from "../utils";
 
 const ResultContext=createContext();
 const baseUrl="https://google-search72.p.rapidapi.com";
@@ -17,7 +19,7 @@ export const ResultContextProvider=({children})=> {
         const response=await fetch(`${baseUrl}${type}`,{
           method: 'GET',
           headers: {
-            'X-RapidAPI-Key': '39e328209cmsh86e78c01dcc458fp18aa4cjsn2ef5ba8f8f30',
+            'X-RapidAPI-Key': RapidAPI_Key,
             'X-RapidAPI-Host': 'google-search72.p.rapidapi.com'
           }
         });
@@ -36,7 +38,7 @@ export const ResultContextProvider=({children})=> {
       const response=await fetch(`https://news-api14.p.rapidapi.com/search?q=${type}`,{
         method: 'GET',
         headers: {
-          'X-RapidAPI-Key': 'f94cf87807msheb3bf4ce58020b0p1963e7jsncfc8c849b255',
+          'X-RapidAPI-Key': RapidAPI_key2,
           'X-RapidAPI-Host': 'news-api14.p.rapidapi.com'
         }
       });
